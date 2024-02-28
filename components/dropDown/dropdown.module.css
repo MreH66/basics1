@@ -1,0 +1,35 @@
+.dropDown {
+   position: absolute;
+   
+   background-color: rgb(83, 83, 83);
+
+   z-index: 10;
+   position: absolute;
+   top: 40%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+ 
+    padding: 1rem 2rem;
+    border: 3px solid #000000;
+    letter-spacing: 0.3ch;
+ 
+}
+
+.dontshow {
+    display: none;
+}
+
+.mainLinks {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, 1fr);
+    justify-items: center;
+  align-items: center;
+}
+
+.mainLink {
+    font-size: 2rem;
+    padding: 15px 30px 5px 30px;
+    text-decoration: none;
+    color: white;
+}

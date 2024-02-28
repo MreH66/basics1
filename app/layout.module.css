@@ -1,0 +1,63 @@
+.header {
+    background-color: #eb8353;
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1.8fr 1fr;
+    grid-template-rows: 1fr;
+ justify-items: center;
+
+ border-bottom: 6px solid #B67352;
+
+ text-align: center;
+}
+
+.mainH {
+    padding: 0.5%;
+    margin: 0;
+    font-size: 2rem;
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+
+.span1 {
+    display: block;
+    width: 300px;
+}
+
+.mainLink {
+    color: white;
+    text-decoration: none;
+}
+
+
+@media only screen and (max-width: 601px) {
+
+    .header {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(2, 1fr);
+
+        height: 20vh;
+    }
+
+    .mainH {
+    
+        margin-top: 10px;
+       
+  
+    }
+    
+   
+  }
+
+      
+@media only screen and (max-width: 380px) {
+    
+.mainH {
+
+    font-size: 1.7rem;
+  
+}
+        
+       
+}

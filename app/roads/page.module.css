@@ -1,0 +1,38 @@
+.divMain {
+    text-align: center;
+}
+
+
+.Img {
+    border: 5px solid rgb(126, 126, 126);
+  
+
+
+}
+
+.mainText {
+    color: black;
+    font-size: 2rem;
+}
+
+@media only screen and (max-width: 1250px) { 
+  
+    .Img {
+        width: 95%;
+        height: auto;
+    }
+  
+  }
+
+  
+@media only screen and (max-width: 750px) { 
+  
+    .Img {
+        object-fit: cover;
+
+        height: 50vh;
+    }
+  
+  }
+
+  
