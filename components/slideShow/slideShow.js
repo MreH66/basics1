@@ -38,7 +38,7 @@ export default function SlideShow() {
     },
     {
       img: porshe,
-      info: "Find more about vehicle types at official page",
+      info: "Find out more about vehicle types on the official page",
     },
   ];
 
