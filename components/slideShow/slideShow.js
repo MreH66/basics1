@@ -1,11 +1,11 @@
 "use client";
-import React, { useState } from "react";
 import Image from "next/image";
 import c from "@/components/slideShow/slidShow.module.css";
 
-// react icons
-import { SlArrowLeft } from "react-icons/sl";
-import { SlArrowRight } from "react-icons/sl";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/pagination";
+import { Pagination } from "swiper/modules";
 
 import imageMain from "../../public/cars/DakarCar.jpg";
 import secondImg from "../../public/cars/dakarQuads.png";
@@ -42,55 +42,28 @@ export default function SlideShow() {
     },
   ];
 
-  const [stateChangePic, setStateChanegPic] = useState(0);
-
-  function changeState(isValTrue) {
-    if (isValTrue) {
-      if (stateChangePic === cars.length - 1) {
-        setStateChanegPic(0);
-        return;
-      }
-      setStateChanegPic(stateChangePic + 1);
-    } else {
-      if (stateChangePic === 0) {
-        setStateChanegPic(cars.length - 1);
-        return;
-      }
-      setStateChanegPic(stateChangePic - 1);
-    }
-  }
-
   return (
     <>
       <div className={c.mainDiv}>
-        <div
-          onClick={() => {
-            changeState(false);
-          }}
-          className={c.iconLeft}
-        >
-          <SlArrowLeft size={60} />
-        </div>
-
-        <div>
-          <Image
-            className={c.mainImg}
-            src={cars[stateChangePic].img}
-            priority
-            alt="pictures"
-          />
-          <div className={c.textDiv}>
-            <p className={c.mainInfo}>{cars[stateChangePic].info}</p>
-          </div>
-        </div>
-        <div
-          onClick={() => {
-            changeState(true);
-          }}
-          className={c.iconRight}
-        >
-          <SlArrowRight size={60} />
-        </div>
+        <Swiper pagination={true} modules={[Pagination]} className="mySwiper">
+          {cars.map((item) => {
+            return (
+              <>
+                <SwiperSlide>
+                  <Image
+                    className={c.mainImg}
+                    src={item.img}
+                    priority
+                    alt="pictures"
+                  />
+                  <div className={c.textDiv}>
+                    <p className={c.mainInfo}>{item.info}</p>
+                  </div>
+                </SwiperSlide>
+              </>
+            );
+          })}
+        </Swiper>
       </div>
     </>
   );
